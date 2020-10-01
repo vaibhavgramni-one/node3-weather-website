@@ -8,6 +8,9 @@ const forecast = require('./utils/forecast.js')
 // creating an application..//
 const app = express()
 
+
+const port = process.env.PORT || 3000 
+
 // Setup express static directory to server....//
 app.use(express.static(path.join(__dirname , '../public')))
 
@@ -97,28 +100,7 @@ app.get('*' , (req , res) => {
 
 
 
-app.listen(3000 , () =>{
-    console.log('Server is up and running at port : 3000')
+app.listen(port , () =>{
+    console.log('Server is up and running at port : ', port)
 })
-
-
-
-
-// console.log(__dirname)
-// console.log(path.join(__dirname , '../public'))
-
-// creating a route to home page /...
-// app.get('' , (req , res) => {
-//     res.send('<h1>Welcome Home :P</h1>')
-// })
-
-// // route for /help...//
-// app.get('/help' , (req, res) => {
-//     res.send('Help Page :)')
-// })
-
-// // route for about page....//
-// app.get('/about' , (req ,res) => {
-//     res.send('<h1>About Page</h1>')
-// })
 
