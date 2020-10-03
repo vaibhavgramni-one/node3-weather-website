@@ -8,9 +8,9 @@ const forecast = require('./utils/forecast.js')
 // creating an application..//
 const app = express()
 
-
 const port = process.env.PORT || 3000 
 
+console.log(__dirname)
 // Setup express static directory to server....//
 app.use(express.static(path.join(__dirname , '../public')))
 
